@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atharv Jadhav | Business Professional</title>
+  <style>
+    :root {
+      /* Sophisticated Navy & Gold Palette - Professional & Trustworthy */
+      --primary: #C9A96B; /* Warm Gold - accent */
+      --primary-light: #D8BD8A; /* Light Gold */
+      --secondary: #2C3E50; /* Deep Navy - trustworthy, professional */
+      --secondary-light: #3A4E62; /* Lighter Navy */
+      --accent: #8E6B3F; /* Antique Bronze - depth */
+      --light: #F5F0E8; /* Warm Cream - elegant background */
+      --lighter: #FAF7F2; /* Off-white */
+      --dark: #1E2B36; /* Dark Navy - almost black */
+      --text: #2C3E50; /* Navy for text */
+      --text-light: #5A6B7A; /* Muted blue-grey */
+      --border: rgba(44, 62, 80, 0.1); /* Subtle navy border */
+      --success: #27AE60; /* Green for achievements */
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+    
+    body {
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.7;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px;
+    }
+    
+    /* Typography */
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      letter-spacing: 0px;
+    }
+    
+    header {
+      padding: 3rem 0;
+      text-align: center;
+      background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
+      margin-bottom: 2.5rem;
+      border-radius: 0 0 20px 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    
+    h1 {
+      font-size: 3.2rem;
+      margin-bottom: 0.75rem;
+      color: white;
+      font-weight: 700;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    
+    .motto {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+      position: relative;
+      display: inline-block;
+      background: rgba(255,255,255,0.1);
+      padding: 0.5rem 2rem;
+      border-radius: 30px;
+    }
+    
+    .motto:after {
+      display: none;
+    }
+    
+    section {
+      padding: 2rem 0;
+    }
+    
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: var(--secondary);
+      position: relative;
+      font-weight: 700;
+    }
+    
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
+      margin: 1rem 0 2rem;
+      border-radius: 2px;
+    }
+    
+    /* Side-by-side tabs layout */
+    .tabs-column-container {
+      display: flex;
+      gap: 40px;
+      margin: 2rem 0;
+    }
+    
+    .tabs-column {
+      flex: 1;
+      min-width: 0;
+    }
+    
+    .tabs-header {
+      display: flex;
+      gap: 2px;
+      margin-bottom: 2rem;
+      background: white;
+      border-radius: 8px;
+      padding: 4px;
+      box-shadow: 0 2px 10px rgba(44, 62, 80, 0.05);
+    }
+    
+    .tab-btn {
+      padding: 0.9rem 1.5rem;
+      background: transparent;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      color: var(--text-light);
+      font-weight: 500;
+      transition: all 0.3s ease;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      flex: 1;
+      white-space: nowrap;
+    }
+    
+    .tab-btn.active {
+      background: var(--secondary);
+      color: white;
+      box-shadow: 0 4px 10px rgba(44, 62, 80, 0.2);
+    }
+    
+    .tab-btn:hover:not(.active) {
+      background: var(--primary-light);
+      color: var(--secondary);
+    }
+    
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+    
+    .tab-content.active {
+      display: block;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 2.2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 30px rgba(44, 62, 80, 0.05);
+      border: 1px solid rgba(201, 169, 107, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 100%);
+    }
+    
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(44, 62, 80, 0.1);
+    }
+    
+    .item {
+      margin-bottom: 1.8rem;
+      position: relative;
+      padding-left: 2rem;
+    }
+    
+    .item:before {
+      content: '◆';
+      position: absolute;
+      left: 0;
+      top: 2px;
+      color: var(--primary);
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+    
+    .item h4 {
+      color: var(--secondary);
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+    
+    .item p {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 1rem;
+    }
+    
+    .skill-tag {
+      background: linear-gradient(135deg, rgba(201, 169, 107, 0.1) 0%, rgba(201, 169, 107, 0.05) 100%);
+      color: var(--secondary);
+      padding: 0.6rem 1.4rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 400;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 0.3px;
+      border: 1px solid rgba(201, 169, 107, 0.3);
+      transition: all 0.2s ease;
+    }
+    
+    .skill-tag:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: var(--secondary);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(201, 169, 107, 0.3);
+    }
+    
+    .contact-footer {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 3.5rem;
+      padding: 2.5rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(44, 62, 80, 0.05);
+      flex-wrap: wrap;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text-light);
+      transition: all 0.2s ease;
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+    }
+    
+    .contact-item:hover {
+      color: var(--secondary);
+      background: rgba(201, 169, 107, 0.1);
+      transform: translateY(-2px);
+    }
+    
+    .contact-item i {
+      color: var(--primary);
+      font-size: 1.2rem;
+      width: 20px;
+    }
+    
+    /* Decorative elements */
+    .badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: var(--secondary);
+      padding: 0.2rem 1rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-left: 0.5rem;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 1000px) {
+      .tabs-column-container {
+        gap: 30px;
+      }
+      .tab-btn {
+        padding: 0.8rem 1rem;
+        font-size: 0.8rem;
+      }
+    }
+    
+    @media (max-width: 900px) {
+      .tabs-column-container {
+        flex-direction: column;
+        gap: 40px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        padding: 30px 20px;
+      }
+      
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      .tabs-header {
+        overflow-x: auto;
+        padding-bottom: 5px;
+      }
+      
+      .tab-btn {
+        padding: 0.7rem 1rem;
+        font-size: 0.75rem;
+        white-space: nowrap;
+      }
+      
+      .contact-footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 1.5rem;
+      }
+      
+      .card {
+        padding: 1.8rem;
+      }
+      
+      .section-title {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Atharv Jadhav</h1>
+      <p class="motto">Driven by clarity, committed to excellence</p>
+    </header>
+
+    <section id="about">
+      <h2 class="section-title">Profile</h2>
+      <div class="card">
+        <p style="font-size: 1.1rem; line-height: 1.9;">A highly disciplined and goal-oriented professional with a national-level sports background and a strong academic foundation from IIM Bangalore. Combining athletic discipline with business acumen to deliver strategic leadership and effective team management. Passionate about driving growth and fostering collaborative environments.</p>
+      </div>
+    </section>
+
+    <div class="tabs-column-container">
+      <!-- First Column - Achievements & Education -->
+      <div class="tabs-column">
+        <section id="achievements">
+          <h2 class="section-title">Achievements</h2>
+          <div class="tabs-container">
+            <div class="tabs-header">
+              <button class="tab-btn active" data-tab="academic">Academic</button>
+              <button class="tab-btn" data-tab="sports">Sports</button>
+            </div>
+            
+            <div class="tab-content active" id="academic">
+              <div class="card">
+                <div class="item">
+                  <h4>IIM Bangalore <span class="badge">Current</span></h4>
+                  <p>Bachelor of Business Administration (2024-2027)</p>
+                </div>
+                <div class="item">
+                  <h4>SVKM's UPG College</h4>
+                  <p>Bachelor of Management Studies (2024-2027)</p>
+                </div>
+                <div class="item">
+                  <h4>BS Patel College, Malkapur</h4>
+                  <p>Higher Secondary Certificate - Science (2022-2024)</p>
+                </div>
+                <div class="item">
+                  <h4>MSM English School</h4>
+                  <p>Secondary School Certificate - Passed with Distinction (2022)</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="tab-content" id="sports">
+              <div class="card">
+                <div class="item">
+                  <h4>National Cricket Player <span class="badge">Elite</span></h4>
+                  <p>Represented at national level tournaments with distinction</p>
+                </div>
+                <div class="item">
+                  <h4>State Football Player</h4>
+                  <p>Competed in state-level championships and emerged as key player</p>
+                </div>
+                <div class="item">
+                  <h4>State Level Basketball Player</h4>
+                  <p>Participated in regional competitions and inter-collegiate tournaments</p>
+                </div>
+                <div class="item">
+                  <h4>State Level Swimmer</h4>
+                  <p>Achieved recognition in competitive aquatic sports at state level</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Second Column - Skills & Professional Focus -->
+      <div class="tabs-column">
+        <section id="skills-section">
+          <h2 class="section-title">Core Competencies</h2>
+          <div class="tabs-container">
+            <div class="tabs-header">
+              <button class="tab-btn active" data-tab="core">Leadership</button>
+              <button class="tab-btn" data-tab="languages">Languages</button>
+            </div>
+            
+            <div class="tab-content active" id="core">
+              <div class="card">
+                <div class="item">
+                  <h4>Strategic Leadership</h4>
+                  <p>Proven ability to lead teams and drive projects through strategic vision, decisive action, and collaborative approach</p>
+                </div>
+                <div class="item">
+                  <h4>Business Communication</h4>
+                  <p>Articulate communicator with strong presentation and negotiation skills, adept at stakeholder engagement</p>
+                </div>
+                <div class="item">
+                  <h4>Team Development</h4>
+                  <p>Skilled in mentoring, coordinating diverse teams, and fostering high-performance cultures</p>
+                </div>
+                <div class="item">
+                  <h4>Analytical Problem-Solving</h4>
+                  <p>Structured approach to identifying challenges and implementing data-driven solutions</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="tab-content" id="languages">
+              <div class="card">
+                <div class="item">
+                  <h4>Language Proficiency</h4>
+                  <div class="skills-list">
+                    <span class="skill-tag">English (Full Professional)</span>
+                    <span class="skill-tag">Hindi (Fluent)</span>
+                    <span class="skill-tag">Marathi (Native)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="professional-value">
+          <h2 class="section-title">Professional Value</h2>
+          <div class="tabs-container">
+            <div class="tabs-header">
+              <button class="tab-btn active" data-tab="differentiators">Differentiators</button>
+              <button class="tab-btn" data-tab="interests">Interests</button>
+            </div>
+            
+            <div class="tab-content active" id="differentiators">
+              <div class="card">
+                <div class="item">
+                  <h4>Athletic Discipline</h4>
+                  <p>Elite sports training has instilled unmatched discipline, resilience, and a performance-driven mindset that translates directly to business leadership</p>
+                </div>
+                <div class="item">
+                  <h4>Academic Excellence</h4>
+                  <p>Strong foundation from premier institutions combining theoretical knowledge with practical business applications</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="tab-content" id="interests">
+              <div class="card">
+                <div class="skills-list">
+                  <span class="skill-tag">Competitive Sports</span>
+                  <span class="skill-tag">Financial Markets</span>
+                  <span class="skill-tag">Strategy & Innovation</span>
+                  <span class="skill-tag">Leadership Development</span>
+                  <span class="skill-tag">Continuous Learning</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="career-focus">
+          <h2 class="section-title">Career Focus</h2>
+          <div class="card">
+            <div class="skills-list" style="margin-bottom: 1.5rem;">
+              <span class="skill-tag">Corporate Strategy</span>
+              <span class="skill-tag">Operations Management</span>
+              <span class="skill-tag">Business Development</span>
+              <span class="skill-tag">Program Management</span>
+            </div>
+            <div class="item">
+              <p>Seeking opportunities to apply analytical thinking and business acumen in developing strategic initiatives that drive organizational growth and operational excellence.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="contact-footer">
+      <div class="contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Mumbai, India</span>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-phone-alt"></i>
+        <span>+91 98340 09750</span>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <span>athravjadhav721@gmail.com</span>
+      </div>
+      <div class="contact-item">
+        <i class="fab fa-linkedin-in"></i>
+        <span>linkedin.com/in/atharvjadhav</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Enhanced tab functionality for all tab containers
+      document.querySelectorAll('.tabs-header').forEach(tabHeader => {
+        const tabsContainer = tabHeader.closest('.tabs-container');
+        
+        tabHeader.addEventListener('click', function(e) {
+          const btn = e.target.closest('.tab-btn');
+          if (!btn) return;
+          
+          // Remove active class from all buttons in this header
+          tabHeader.querySelectorAll('.tab-btn').forEach(b => {
+            b.classList.remove('active');
+          });
+          
+          // Remove active class from all contents in this container
+          tabsContainer.querySelectorAll('.tab-content').forEach(content => {
+            content.classList.remove('active');
+          });
+          
+          // Add active class to clicked button
+          btn.classList.add('active');
+          
+          // Show corresponding content
+          const tabId = btn.getAttribute('data-tab');
+          const targetContent = document.getElementById(tabId);
+          if (targetContent) {
+            targetContent.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
